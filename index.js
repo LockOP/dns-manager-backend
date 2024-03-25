@@ -10,4 +10,9 @@ app.get("/", (req, res) => {
   console.log("yay");
 });
 
-app.listen(5000);
+const port = 5000;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
+module.exports = app;
