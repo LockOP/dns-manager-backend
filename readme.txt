@@ -23,4 +23,7 @@ npm i express dotenv cors
   ]
 }
 
+// for aws route 53
+@aws-sdk/client-route-53
+
 
