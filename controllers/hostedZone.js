@@ -3,16 +3,13 @@ const {
   DeleteHostedZoneCommand,
   CreateHostedZoneCommand,
 } = require("@aws-sdk/client-route-53");
-const route53Client = require("../configs/router53Client");
+const { route53Client } = require("../configs/router53Client");
 
 const getAllHostedZones = async (req, res) => {
   try {
     const command = new ListHostedZonesCommand({});
     const response = await route53Client.send(command);
-    console.log(
-      "Connection to Route 53 succeeded. Hosted zones:",
-      response.HostedZones
-    );
+    console.log("Hosted zone reieved successfully:", response.HostedZones);
     res.status(201).json(response.HostedZones);
   } catch (error) {
     console.error("Error:", error);

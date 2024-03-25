@@ -2,7 +2,7 @@ const {
   ListResourceRecordSetsCommand,
   ChangeResourceRecordSetsCommand,
 } = require("@aws-sdk/client-route-53");
-const route53Client = require("../configs/router53Client");
+const { route53Client } = require("../configs/router53Client");
 
 const getAllDNSRecords = async (req, res) => {
   try {

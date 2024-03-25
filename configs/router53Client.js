@@ -1,7 +1,8 @@
 const { Route53Client } = require("@aws-sdk/client-route-53");
+require('dotenv').config();
 
-const accessKeyId = "AKIA6OWT7F5NKMR5OT4D";
-const secretAccessKey = "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";
+const accessKeyId = process.env.ACCESS_KEY_ID;
+const secretAccessKey = process.env.SECRET_ACCESS_KEY;
 const region = "eu-north-1";
 
 const route53Client = new Route53Client({
